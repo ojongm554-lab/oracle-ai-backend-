@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>øråclē AI</title>
+<style>
+body{margin:0;background:#090a0d;color:#f4f4f5;font-family:Arial,sans-serif}.app{max-width:520px;margin:auto;min-height:100vh;display:flex;flex-direction:column}
+header{padding:22px 18px;border-bottom:1px solid #22252b}.logo{font-size:25px;font-weight:700}.tag{color:#8d939e;font-size:12px;margin-top:4px}
+.chat{flex:1;padding:18px}.welcome{text-align:center;margin:55px 10px;color:#9da3ad}.welcome h1{color:#fff;font-size:30px}.msg{padding:12px 14px;border-radius:14px;margin:10px 0;line-height:1.45;white-space:pre-wrap}.user{background:#1c2027;margin-left:40px}.ai{background:#101318;border:1px solid #252932;margin-right:40px}
+.bottom{padding:12px 14px 18px;border-top:1px solid #22252b}.quick{display:flex;gap:7px;overflow:auto;margin-bottom:9px}.quick button{background:#15181e;color:#cdd1d8;border:1px solid #2a2e36;border-radius:20px;padding:8px 12px;white-space:nowrap}
+.row{display:flex;gap:8px}.row input{flex:1;background:#12151a;color:#fff;border:1px solid #30343c;border-radius:13px;padding:13px}.row button{width:48px;border:0;border-radius:13px;background:#fff;color:#000;font-size:18px}
+</style></head>
+<body><div class="app"><header><div class="logo">øråclē AI</div><div class="tag">Serious. Clear. Built to learn.</div></header>
+<main class="chat" id="chat"><div class="welcome" id="welcome"><h1>Welcome.</h1><p>I'm øråclē AI — your future personal AI assistant.<br>Ask me anything.</p></div></main>
+<div class="bottom"><div class="quick"><button onclick="fill('Teach me this step-by-step: ')">Study</button><button onclick="fill('Give me a short quiz on ')">Quiz</button><button onclick="fill('Summarize this: ')">Summarize</button></div>
+<div class="row"><input id="input" placeholder="Message øråclē AI..." onkeydown="if(event.key==='Enter')send()"><button onclick="send()">➤</button></div></div></div>
+<script>
+const chat=document.getElementById('chat'),input=document.getElementById('input');
+function fill(t){input.value=t;input.focus()}
+function send(){let v=input.value.trim();if(!v)return;document.getElementById('welcome')?.remove();let u=document.createElement('div');u.className='msg user';u.textContent=v;chat.appendChild(u);input.value='';let a=document.createElement('div');a.className='msg ai';a.textContent='Brain connection is not active yet. This interface is ready for the next step: connecting øråclē AI to its secure AI backend.';chat.appendChild(a)}
+</script></body></html>
